@@ -1,0 +1,12 @@
+.new-document-modal.show {
+  display: flex;
+}
+
+.new-document-modal__content__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-document-modal__form__submit-button {
+  width: 100%;
+}

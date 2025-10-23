@@ -1,0 +1,52 @@
+/* List styles (default) */
+.main__table .table__header,
+.main__table .document-card {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  padding: 1rem 2rem 1rem 1rem;
+  gap: 0.5rem;
+}
+
+.main__table .table__body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid styles */
+.main__table.grid-view .table__header {
+  display: none;
+}
+
+.main__table.grid-view .table__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 763px) {
+  .main__table.grid-view .table__body {
+    display: flex;
+  }
+}
+
+.main__table.grid-view .document-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Common styles */
+.table__header {
+  color: #676767;
+  font-size: 0.8rem;
+}
+.table__body {
+  gap: 0.8rem;
+}
+
+.main__table .document-card.add-document-button {
+  height: fit-content;
+  padding: 1rem;
+  cursor: pointer;
+}

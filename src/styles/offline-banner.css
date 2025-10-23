@@ -1,0 +1,18 @@
+.offline-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffcc00;
+  color: #2c374a;
+  padding: 0.5rem;
+  z-index: 100;
+  line-height: 0;
+}
+
+.offline-banner img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}

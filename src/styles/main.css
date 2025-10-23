@@ -1,0 +1,27 @@
+@import url('./global.css');
+@import url('./main.css');
+@import url('./document-card.css');
+@import url('./filters.css');
+@import url('./main-table.css');
+@import url('./form-modal.css');
+@import url('./notifications.css');
+@import url('./offline-banner.css');
+@import url('./home.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #edeff3;
+  color: #2c374a;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}

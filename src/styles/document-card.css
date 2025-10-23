@@ -1,0 +1,64 @@
+.document-card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #676767;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.document-card__delete-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background: none;
+  border: none;
+  color: #9b9b9b;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 180ms ease-in-out;
+  width: 24px;
+  height: 24px;
+}
+
+.document-card__delete-button:hover {
+  color: #e04b4b;
+}
+
+.document-card__delete-button:focus {
+  outline: 2px solid #5d5de8;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.document-card__new {
+  padding: 1rem;
+  background-color: #ffffff60;
+  cursor: pointer;
+  height: fit-content;
+  text-align: center;
+  color: #5d5de8;
+}
+
+.document-card__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c374a;
+}
+
+.document-card__relative-date {
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: #9b9b9b;
+  white-space: nowrap;
+  font-weight: 400;
+}

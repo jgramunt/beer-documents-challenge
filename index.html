@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Management</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🍺</text></svg>"
+    />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div
+        class="notifications"
+        id="notifications-container"
+        role="button"
+        aria-label="View notifications"
+      >
+        <span class="notification__text"></span>
+        <div class="notification__icon">
+          <img src="src/assets/bell.svg" alt="Notifications" />
+          <div class="notification__badge">?</div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="notifications-window hidden"
+      id="notifications-window"
+      role="region"
+      aria-label="Notifications panel"
+    >
+      <div class="notifications-window__header">
+        <h3 class="notifications-window__title">Notifications</h3>
+        <button
+          class="notifications-window__close"
+          id="notifications-close"
+          title="Close notifications"
+          aria-label="Close notifications"
+        >
+          &times;
+        </button>
+      </div>
+      <div
+        class="notifications-window__content"
+        id="notifications-list"
+        role="log"
+        aria-live="polite"
+        aria-label="Notifications list"
+      >
+        <!-- Notifications will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="main__title">Documents</section>
+      <section class="main__filters">
+        <div class="filters__sort">
+          <span>Sort by:</span>
+          <select
+            name="sort"
+            id="sort"
+            class="filters__select"
+            aria-label="Sort documents by"
+          >
+            <option value="">Select one...</option>
+            <option value="name">Name</option>
+            <option value="version">Version</option>
+            <option value="created">Created Date</option>
+          </select>
+        </div>
+        <div
+          class="filters__view-selector"
+          role="group"
+          aria-label="View options"
+        >
+          <button
+            class="filters__view__button active"
+            id="list-view"
+            title="Switch to list view"
+            aria-label="List view"
+            aria-pressed="true"
+          >
+            <img src="src/assets/list.svg" alt="List View" />
+          </button>
+          <button
+            class="filters__view__button"
+            id="grid-view"
+            title="Switch to grid view"
+            aria-label="Grid view"
+            aria-pressed="false"
+          >
+            <img src="src/assets/grid.svg" alt="Grid View" />
+          </button>
+        </div>
+      </section>
+      <section class="main__table list-view" id="main-table">
+        <div class="table__header">
+          <div class="table__header__item name">Name</div>
+          <div class="table__header__item version">Contributors</div>
+          <div class="table__header__item created">Attachments</div>
+        </div>
+        <div class="table__body">
+          <!-- Document rows will be dynamically inserted here -->
+
+          <div
+            role="button"
+            class="add-document-button document-card__new"
+            id="create-card-button"
+          >
+            + Add document
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal hidden" id="new-document-modal">
+      <div class="modal__content">
+        <div class="new-document-modal__content__header">
+          <h2 class="new-document-modal__title">Add New Document</h2>
+          <button
+            class="notifications-window__close"
+            id="modal-close"
+            title="Close modal"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+        </div>
+        <form id="new-document-form" class="new-document-modal__form">
+          <div class="form-group">
+            <div class="form-field">
+              <label for="doc-name">Document Name:</label>
+              <input
+                class="input"
+                type="text"
+                id="doc-name"
+                name="doc-name"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="doc-version">Version:</label>
+              <input
+                class="input"
+                type="text"
+                id="doc-version"
+                name="doc-version"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="doc-contributors"
+                >Contributors (comma-separated):</label
+              >
+              <textarea
+                class="input"
+                id="doc-contributors"
+                name="doc-contributors"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="doc-attachments"
+                >Attachments (comma-separated URLs):</label
+              >
+              <textarea
+                class="input"
+                id="doc-attachments"
+                name="doc-attachments"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </form>
+        <div class="form-actions">
+          <button
+            type="submit"
+            form="new-document-form"
+            class="new-document-modal__form__submit-button button"
+            disabled
+          >
+            Add Document
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="offline-banner"
+      class="offline-banner hidden"
+      title="You are currently offline. Displaying cached documents."
+    >
+      <img src="src/assets/offline.svg" alt="Offline" />
+    </div>
+
+    <script type="module" src="src/main.ts" defer></script>
+  </body>
+</html>

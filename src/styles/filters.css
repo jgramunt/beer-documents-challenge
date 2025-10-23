@@ -1,0 +1,42 @@
+
+.filters__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filters__select {
+  background: none;
+  border: none;
+  color: #5d5de8;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.filters__view-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filters__view__button {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  opacity: 0.4;
+}
+
+.filters__view__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.filters__view__button.active {
+  opacity: 1;
+}
+
+.filters__view__button img {
+  width: 100%;
+  height: 100%;
+}
