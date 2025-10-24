@@ -16,20 +16,19 @@ export function getRelativeDays(timestamp: string | Date | number): string {
     return "today";
   } else if (diffDays === 1) {
     return "1 day ago";
-  } else if (diffDays > 0 && diffDays < 60) {
+  } else if (diffDays > 0 && diffDays < 30) {
     return `${diffDays} days ago`;
   }
 
-  if (diffDays >= 60) {
+  if (diffDays >= 30 && diffDays < 365) {
     const months = Math.floor(diffDays / 30);
+    return months === 1 ? "1 month ago" : `${months} months ago`;
+  }
 
-    if (months < 24) {
-      return months === 1 ? "1 month ago" : `${months} months ago`;
-    }
-
-    const years = Math.floor(months / 12);
+  if (diffDays >= 365) {
+    const years = Math.floor(diffDays / 365);
     return years === 1 ? "1 year ago" : `${years} years ago`;
   }
 
-    return "";
+  return "";
 }
