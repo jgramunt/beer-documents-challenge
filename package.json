@@ -8,10 +8,7 @@
     "dev:frontend": "vite",
     "dev:server": "cd server && go run server.go",
     "build": "vite build",
-    "preview": "vite preview",
     "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
