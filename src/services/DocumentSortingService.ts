@@ -1,4 +1,4 @@
-import { Document } from "../../models/Document.js";
+import { Document } from "../models/Document.js";
 
 export type SortField = "name" | "version" | "created" | "";
 
