@@ -23,6 +23,11 @@ export class FormHandler {
 
   constructor() {
     this.modal = document.getElementById("new-document-modal") as HTMLElement;
+
+    if (!this.modal) {
+      throw new Error("Modal element with id 'new-document-modal' not found");
+    }
+
     this.form = this.modal.querySelector(
       "#new-document-form"
     ) as HTMLFormElement;
@@ -43,9 +48,6 @@ export class FormHandler {
   }
 
   private validateElements(): void {
-    if (!this.modal) {
-      throw new Error("Modal element with id 'new-document-modal' not found");
-    }
     if (!this.form) {
       throw new Error("Form element with id 'document-form' not found");
     }
