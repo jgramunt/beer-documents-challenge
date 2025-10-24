@@ -41,3 +41,15 @@ npm run dev:frontend
 ```
 
 The app works offline with documents stored in cache.
+
+### Run Tests
+
+```bash
+npm test
+```
+
+### Run Tests with Coverage
+
+```bash
+npm run test:coverage
+```
