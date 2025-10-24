@@ -329,7 +329,7 @@ describe("NotificationsController", () => {
       let notificationCallback: (notification: Notification) => void;
 
       mockService.connect.mockResolvedValue(undefined);
-      mockService.subscribe.mockImplementation((callback) => {
+      mockService.subscribe.mockImplementation((callback: any) => {
         notificationCallback = callback;
         return () => {};
       });
@@ -379,7 +379,7 @@ describe("NotificationsController", () => {
       let notificationCallback: (notification: Notification) => void;
 
       mockService.connect.mockResolvedValue(undefined);
-      mockService.subscribe.mockImplementation((callback) => {
+      mockService.subscribe.mockImplementation((callback: any) => {
         notificationCallback = callback;
         return () => {};
       });
