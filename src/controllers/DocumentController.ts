@@ -5,7 +5,7 @@ import { FormHandler, type FormData } from "../components/FormHandler.js";
 import {
   DocumentSortingService,
   type SortField,
-} from "../services/sorting/index.js";
+} from "../services/DocumentSortingService.js";
 import { generateDocumentId, generateId } from "../utils/idGenerator.js";
 import { logger } from "../utils/logger.js";
 
