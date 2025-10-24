@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { DocumentSortingService } from "../../DocumentSortingService.js";
-import type { Document } from "../../../models/Document.js";
+import { DocumentSortingService } from "../DocumentSortingService.js";
+import type { Document } from "../../models/Document.js";
 
 describe("DocumentSortingService", () => {
   let sortingService: DocumentSortingService;
