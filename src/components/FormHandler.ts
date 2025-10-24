@@ -123,7 +123,7 @@ export class FormHandler {
         errorElement.className = "error-message";
         field.parentNode?.insertBefore(errorElement, field.nextSibling);
       }
-      errorElement.textContent = validation.error || "";
+      errorElement.textContent = validation.error || null;
       field.classList.add("error");
     } else {
       field.classList.remove("error");

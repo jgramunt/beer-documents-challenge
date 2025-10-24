@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { FormHandler, FormData } from "../FormHandler.js";
+import { validateDocumentName } from "../../utils/formValidation.js";
 
 // Mock form validation utilities
 vi.mock("../../utils/formValidation.js", () => ({
@@ -570,6 +571,18 @@ describe("FormHandler", () => {
       expect(document.getElementById("doc-name-error")).toBeTruthy();
       expect(document.getElementById("doc-version-error")).toBeTruthy();
       expect(submitBtn.disabled).toBe(true);
+    });
+
+    it("should handle null error in validation result", () => {
+      const mockValidation = vi.mocked(validateDocumentName);
+      mockValidation.mockReturnValueOnce({ valid: false, error: null as any });
+
+      nameInput.value = "test";
+      nameInput.dispatchEvent(new FocusEvent("blur"));
+
+      const errorElement = document.getElementById("doc-name-error");
+      expect(errorElement).toBeTruthy();
+      expect(errorElement?.textContent).toBe("");
     });
   });
 });
